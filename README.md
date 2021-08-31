@@ -6,7 +6,7 @@ Your work in the course will be completed in this workspace. Instructions for th
 
 "Push" your work up to GitHub for backup. By creating "commits", which you can think of as versioned checkpoints in your workspace, you are not at risk of losing your work. It's easy to revert back to an old version or to restore your entire workspace on a different computer.
 
-1. Select the _View_ menu and then _SCM_ (Source Control Management)
+1. Select the _View_ menu and then _SCM_ (XPXPSource Control Management)
    - Alternatively: Select the Activity Bar icon that's three circles with lines for Source Control
 2. Notice the files listed under Changes. These are files you've made modifications to since your last backup.
 3. Move your mouse's cursor over the word changes and notice the + symbol that appears. Click that plus symbol to add all changes to the next backup. You will now see these listed under "Staged Changes".
