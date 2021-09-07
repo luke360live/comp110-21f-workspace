@@ -8,6 +8,10 @@ __author__ = "730288863"
 i: int = 0
 search: str = input("What letter do you want to search for?: ")
 word: str = input("Enter a word: ")
-while i < len(word): 
-    how_many: str = str(word.count(search))
-    print("Count: " + how_many)
+count = "0"
+while i < len(word):
+    if word[i] == search:
+        count = str(i + 1)
+        break
+    i = i + 1
+print("Count: " + count) 
