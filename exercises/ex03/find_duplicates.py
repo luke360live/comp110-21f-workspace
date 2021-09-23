@@ -16,6 +16,3 @@ while First_Letter < length:
     First_Letter = First_Letter + 1
     Compare_Letter = First_Letter + 1
 print("Found duplicate: " + str(True_False))
-
-
-
