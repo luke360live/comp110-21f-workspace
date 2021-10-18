@@ -17,6 +17,11 @@ def only_evens(a: list[int]) -> list:
 
 def sub(a: list[int], b: int, c: int) -> list:
     sublist: list[int] = []
+    if b < 0:
+        b = 0
+    if c > len(a):
+        c = len(a) - 1
+       
     for x in range(b, c):
         sublist.append(a[x])
         
@@ -31,6 +36,3 @@ def concat(a: list[int], b: list[int]) -> list:
         list_concat.append(b[y])
     
     return list_concat
-
-list1 = [1,2,3,4,5]
-print((sub(list1, 1, 4)))
