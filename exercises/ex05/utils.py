@@ -1,5 +1,6 @@
 """List utility functions part 2."""
 
+<<<<<<< HEAD
 __author__ = "730288863"
 
 # Define your functions below
@@ -36,3 +37,8 @@ def concat(a: list[int], b: list[int]) -> list:
         list_concat.append(b[y])
     
     return list_concat
+=======
+__author__ = "123456789"
+
+# Define your functions below
+>>>>>>> b9a7730ff40ba970e5c8fa5b93bab427fcb90e6c

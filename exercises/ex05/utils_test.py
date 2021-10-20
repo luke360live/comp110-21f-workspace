@@ -19,7 +19,7 @@ def test_only_evens() -> None:
     test_list: list[int] = []
     assert only_evens(test_list) == []
 
- def test_sub_empty_range() -> None:
+def test_sub_empty_range() -> None:
    test_list: list[int] = []
    integer1: int = 1
    integer2: int = 4
