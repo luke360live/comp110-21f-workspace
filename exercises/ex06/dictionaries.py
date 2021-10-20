@@ -5,10 +5,8 @@ __author__ = "730288863"
 # Define your functions below
 
 
-"""Invert Function"""
-
-
 def invert(first_list: dict[str, str]) -> dict[str, str]:
+    """Invert Function"""
     invert_dict: dict[str, str] = {}
     for key in first_list: 
         if first_list[key] in invert_dict:
@@ -17,10 +15,8 @@ def invert(first_list: dict[str, str]) -> dict[str, str]:
     return invert_dict
 
 
-"""Function returning most frequent color."""
-
-
 def favorite_color(color: dict[str, str]) -> str:
+    """Function returning most frequent color."""
     max: int = 0
     most_popular: str = ""
     new_dict: dict[str, int] = {}
@@ -36,10 +32,8 @@ def favorite_color(color: dict[str, str]) -> str:
     return most_popular
 
 
-"""Function counting frequency of integers"""
-
-
 def count(first_list: list[str]) -> dict[str, int]:
+    """Function counting frequency of integers"""
     frequency: dict[str, int] = {}
     for value in first_list:
         frequency[value] = 0
