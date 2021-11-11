@@ -1,3 +1,6 @@
+from csv import DictReader
+
+
 def read_csv_rows(DATA_FILE_PATH: str) -> list[dict[str, str]]:
     """Implementing read_csv_rows function."""  
     result: list[dict[str, str]] = []
@@ -65,3 +68,13 @@ def count(numbers: list[str]) -> dict[str, int]:
         else:
             result[number] = 1
     return result
+
+
+def difference(number1: int, number2: int) -> int:
+    """Difference function."""
+    return number1 - number2
+
+
+def division(number1: int, number2: int) -> int:
+    """Division function."""
+    return (number1 / number2)
