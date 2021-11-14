@@ -30,3 +30,36 @@ class Simpy:
         while start != stop:
             self.values.append(start)
             start += step
+    
+    def sum(self) -> float:
+        """Creates sum of list values."""
+        summation: float = sum(self.values)
+        return summation
+    
+    def __add__(self, rhs: Union[float, Simpy]) -> Simpy:
+        """Increse list of values by another value or list of values."""
+        if isinstance(rhs, float):
+            result: list[float] = []
+            for item in self.values:
+                result.append(item + rhs)
+            return Simpy(result)
+        else: 
+            assert len(self.values) == len(rhs.values)
+            result: list[float] = []
+            for i in range(len(self.values)):
+                result.append(self.values[i] ** rhs.values[i])
+            return Simpy(result)
+        
+    def __pow__(self, rhs: Union[float, Simpy]) -> Simpy:
+        """Raise a list of values by another value or list of values."""
+        if isinstance(rhs, float):
+            result: list[float] = []
+            for item in self.values: 
+                result.append(item ** rhs)
+            return Simpy(result)
+        else:
+            assert len(self.values) == len(rhs.values)
+            result: list[float] = []
+            for i in range(len(self.values)):
+                result.append(self.values[i] % rhs.values[i])
+            return Simpy(result)
