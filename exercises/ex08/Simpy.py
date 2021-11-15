@@ -10,7 +10,7 @@ __author__ = "730288863"
 class Simpy:
     values: list[float]
 
-    def __innit__(self, values: list[float]): 
+    def __provide__(self, values: list[float]): 
         """Provides a list of floats as the arguement."""
         self.values = values
     
@@ -62,4 +62,72 @@ class Simpy:
             result: list[float] = []
             for i in range(len(self.values)):
                 result.append(self.values[i] % rhs.values[i])
+            return Simpy(result)
+    
+    def __mod__(self, rhs: Union[float, Simpy]) -> Simpy:
+        """Calculates difference between a list of values and another value or list of values."""
+        if isinstance(rhs, float):
+            result: list[float] = []
+            for item in self.values:
+                result.append(item % rhs)
+            return Simpy(result)
+        else:
+            assert len(self.values) == len(rhs.values)
+            result: list[float] = []
+            for i in range(len(self.values)):
+                result.append(self.values[i] % rhs.values[i])
+            return Simpy(result)
+    
+    def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Calcualtes if list of values equals another value or list of values."""
+        if isinstance(rhs, float):
+            result: list[float] = []
+            for item in self.values:
+                if item == rhs:
+                    result.append(True)
+                else:
+                    result.append(False)
+            return Simpy(result)
+        else:
+            result: list[float] = []
+            for i in range(len(self.values)):
+                if self.values[i] == rhs[i]:
+                    result.append(True)
+                else:
+                    result.append(False)
+            return Simpy(result)
+
+    def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Calculates if list of values is greater than another value or list of values."""
+        if isinstance(rhs, float):
+            result: list[float] = []
+            for item in self.values:
+                if item > rhs:
+                    result.append(True)
+                else:
+                    result.append(False)
+            return Simpy(result)
+        else:
+            result: list[float] = []
+            for i in range(len(self.values)):
+                if self.values[i] > rhs[i]:
+                    result.append(True)
+                else:
+                    result.append(False)
+            return Simpy(result)
+
+    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
+        """Overloads subscription notation for Simpy."""
+        if isinstance(rhs, int):
+            num: float = 0
+            while num < len(self.values):
+                if rhs == num:
+                    return self.values[num]
+                else:
+                    num += 1
+        else:
+            result: list[float] = []
+            for i in range(len(self.values)):
+                if rhs[i] == True:
+                    result.append(self.values[i])
             return Simpy(result)
